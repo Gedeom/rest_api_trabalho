@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
 
+        //aqui é onde registro, vinculo o repositorio com a interface
         $this->app->bind('App\Interfaces\PessoaRepositoryInterface', 'App\Repositories\PessoaRepository');
     }
 

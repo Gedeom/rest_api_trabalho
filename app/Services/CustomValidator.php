@@ -27,10 +27,10 @@ class CustomValidator extends Validator
 
     }
 
+    //função que verifica se o cpf é valido, atraves de outra função
     protected
     function validateCpfValid($attribute, $value)
     {
-
         return Utils::validate_cpf($value);
     }
 }

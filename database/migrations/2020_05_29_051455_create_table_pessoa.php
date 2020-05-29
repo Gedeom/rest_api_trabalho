@@ -14,14 +14,14 @@ class CreateTablePessoa extends Migration
     public function up()
     {
         Schema::create('pessoa', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id');//id incrementavel
             $table->string('nome');
             $table->string('cpf',11);
             $table->date('dt_nascimento');
             $table->string('email');
-            $table->timestamps();
+            $table->timestamps(); //data de criação e da ultima atualização
 
-            $table->unique('cpf','pessoa_cpf_unique');
+            $table->unique('cpf','pessoa_cpf_unique'); // chave unica para cpf
         });
     }
 

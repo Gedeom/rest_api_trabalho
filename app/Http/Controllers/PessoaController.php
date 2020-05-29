@@ -29,6 +29,7 @@ class PessoaController extends Controller
 
     private $pessoa;
 
+    //aqui eu passo somente a interface, mas o laravel avisa o controller que tem uma classe implementando essa interface, ai ja pega os metodos delas para essa variavel, la em AppServiceProvider
     public function __construct(PessoaRepositoryInterface $pessoa)
     {
         $this->pessoa = $pessoa;
@@ -104,4 +105,5 @@ class PessoaController extends Controller
 
         return response()->json($retorno['dados'], $retorno['code'],[],JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT)->header('Content-Type', 'application/json');
     }
+
 }
