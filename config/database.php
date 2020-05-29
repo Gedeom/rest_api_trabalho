@@ -35,6 +35,22 @@ return [
 
     'connections' => [
 
+        'con_test' => [
+            'driver'    => 'mysql',
+            'host'      => 'localhost',
+            'database'  => 'rest_trab_db',
+            'username'  => 'root',
+            'password'  => '',
+            'charset'   => 'utf8mb4',
+            'collation' => 'utf8mb4_general_ci',
+            'prefix'    => '',
+            'strict'    => false,
+            'options' => [
+                PDO::ATTR_EMULATE_PREPARES => true,
+            ],
+        ],
+
+
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),

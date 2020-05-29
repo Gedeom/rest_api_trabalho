@@ -11,6 +11,28 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+
+Route::get('pessoas/{id?}',['uses'=>'PessoaController@Get']);
+Route::post('pessoas',['uses'=>'PessoaController@Create']);
+Route::put('pessoas/{id}',['uses'=>'PessoaController@Update']);
+Route::delete('pessoas/{id}',['uses'=>'PessoaController@Delete']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

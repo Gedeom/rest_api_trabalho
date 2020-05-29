@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
+use App\Services\CustomValidator;
 use Illuminate\Support\ServiceProvider;
-
+use Validator;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +14,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+
+        $this->app->bind('App\Interfaces\PessoaRepositoryInterface', 'App\Repositories\PessoaRepository');
     }
 
     /**
@@ -23,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Validator::resolver(function ($translator, $data, $rules, $messages = array(), $customAttributes = array()) {
+            return new CustomValidator($translator, $data, $rules, $messages, $customAttributes);
+        });
     }
 }
